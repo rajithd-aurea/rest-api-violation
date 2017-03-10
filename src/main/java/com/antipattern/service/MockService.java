@@ -11,5 +11,21 @@ public class MockService {
         log.info("Save");
     }
 
+    public void saveDetails() {
+        log.info("Save");
+    }
+
+    public void find(){
+        log.info("Only find");
+    }
+
+    public void findWithCurd(){
+        drop();
+    }
+
+    private void drop(){
+
+    }
+
 
 }

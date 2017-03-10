@@ -26,6 +26,24 @@ public class GetAntiPatternController {
         return new GetResponse();
     }
 
+    @RequestMapping(method = RequestMethod.GET, value = "/get_save_good", produces = "application/json")
+    public GetResponse onlyFind() {
+        mockService.find();
+        return new GetResponse();
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/get_save_inner_crud", produces = "application/json")
+    public GetResponse innerCrud() {
+        mockService.findWithCurd();
+        return new GetResponse();
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/get_save_regex", produces = "application/json")
+    public GetResponse saveRegEx() {
+        mockService.saveDetails();
+        return new GetResponse();
+    }
+
     @GetMapping(path = "/get_void_new")
     public void voidNewReturn() {
         log.info("Void new");
