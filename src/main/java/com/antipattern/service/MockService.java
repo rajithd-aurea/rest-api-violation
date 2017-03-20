@@ -23,8 +23,13 @@ public class MockService {
         drop();
     }
 
-    private void drop(){
+    public void drop(){
 
+    }
+
+    public void findAndSave(){
+        find();
+        save();
     }
 
 
