@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class MockService {
 
+    private AnotherMockService anotherMockService;
+
     public void save() {
         log.info("Save");
     }
@@ -30,6 +32,11 @@ public class MockService {
     public void findAndSave(){
         find();
         save();
+    }
+
+    public void findW(){
+        find();
+        anotherMockService.save();
     }
 
 

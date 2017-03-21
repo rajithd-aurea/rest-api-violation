@@ -50,6 +50,12 @@ public class PostAntiPatternController {
         return new PostResponse();
     }
 
+    @RequestMapping(method = RequestMethod.POST, value = "/user")
+    public PostResponse findFirstAndSave(){
+        mockService.findW();
+        return new PostResponse();
+    }
+
 
 
 }
