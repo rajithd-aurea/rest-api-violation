@@ -39,5 +39,7 @@ public class MockService {
         anotherMockService.save();
     }
 
-
+    public void create() {
+        log.info("Create");
+    }
 }
