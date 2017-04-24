@@ -40,4 +40,40 @@ public class PostPutAntiPatternController {
         mockService.findAndSave();
         return new PostResponse();
     }
+
+    @RequestMapping(method = RequestMethod.DELETE, value = "/resource/{id}")
+    public PostResponse deleteResource() {
+        mockService.drop();
+        return new PostResponse();
+    }
+
+    @RequestMapping(method = RequestMethod.DELETE, value = "/resource/{id}")
+    public PostResponse deleteResource2() {
+        mockService.findAndSave();
+        return new PostResponse();
+    }
+
+    @RequestMapping(method = RequestMethod.DELETE, value = "/resource/{id}")
+    public PostResponse deleteResource3() {
+        mockService.findWithCurd();
+        return new PostResponse();
+    }
+
+    @RequestMapping(method = RequestMethod.PATCH, value = "/resource/{id}")
+    public PostResponse patchResource() {
+        mockService.drop();
+        return new PostResponse();
+    }
+
+    @RequestMapping(method = RequestMethod.PATCH, value = "/resource/{id}")
+    public PostResponse patchResource2() {
+        mockService.findAndSave();
+        return new PostResponse();
+    }
+
+    @RequestMapping(method = RequestMethod.PATCH, value = "/resource/{id}")
+    public PostResponse patchResource3() {
+        mockService.findW();
+        return new PostResponse();
+    }
 }
