@@ -1,7 +1,11 @@
 package com.antipattern.postput;
 
+import static org.springframework.util.MimeTypeUtils.APPLICATION_JSON_VALUE;
+
 import com.antipattern.post.PostResponse;
 import com.antipattern.service.MockService;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,6 +17,12 @@ public class PostPutAntiPatternController {
 
     @RequestMapping(method = RequestMethod.POST, value = "/resource")
     public PostResponse createResource() {
+        mockService.save();
+        return new PostResponse();
+    }
+
+    @PostMapping(path = "/resource/{id}", consumes = APPLICATION_JSON_VALUE)
+    public PostResponse createResource2() {
         mockService.save();
         return new PostResponse();
     }
@@ -37,6 +47,12 @@ public class PostPutAntiPatternController {
 
     @RequestMapping(method = RequestMethod.PUT, value = "/resource/{id}")
     public PostResponse updateResourceWithPut() {
+        mockService.findAndSave();
+        return new PostResponse();
+    }
+
+    @PutMapping(path = "/resource/results/{resultId}", consumes = APPLICATION_JSON_VALUE)
+    public PostResponse updateResourceWithPut2() {
         mockService.findAndSave();
         return new PostResponse();
     }
